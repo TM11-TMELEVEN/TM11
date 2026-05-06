@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TM11 | Concrete, Landscaping & Fencing Melbourne</title>
+    <style>
+        /* CSS VARIABLES & RESET */
+        :root {
+            --gold: #d4af37;
+            --silver: #c0c0c0;
+            --dark: #121212;
+            --black: #000000;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background-color: var(--black);
+            scroll-behavior: smooth;
+        }
+
+        /* SECTION 1: HEADER */
+        .main-header {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 10px 5%;
+            border-bottom: 2px solid var(--gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .header-logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .brand-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+
+        /* HERO DESIGN - Based on your ad */
+        .hero {
+            min-height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://tmeleven.wordpress.com/wp-content/uploads/2026/05/img_5628.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .cta-btn {
+            background: var(--gold);
+            color: var(--black);
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            display: inline-block;
+            transition: 0.3s;
+            border: 2px solid var(--gold);
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        /* SECTION 2: ABOUT US */
+        .about-section {
+            padding: 100px 10%;
+            background: var(--dark);
+            text-align: center;
+        }
+
+        .section-title {
+            color: var(--gold);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--silver);
+        }
+
+        /* SECTION 3: SERVICES PREVIEW */
+        .services-preview {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .service-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            padding: 0 0 20px 0;
+            transition: 0.3s;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .service-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-card h3 {
+            padding: 20px;
+            color: var(--white);
+        }
+
+        .outline-btn {
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            padding: 10px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .outline-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        /* SECTION 4: CONTACT US */
+        .contact-area {
+            padding: 100px 10%;
+            background: #0a0a0a;
+            border-top: 1px solid #222;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-box h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-box p, .contact-box a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 0.8rem;
+            border: 1px solid var(--gold);
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: var(--gold);
+        }
+
+        /* FOOTER */
+        .main-footer {
+            padding: 40px 10%;
+            text-align: center;
+            background: #000;
+        }
+
+        .quote {
+            font-style: italic;
+            color: var(--silver);
+            margin-bottom: 15px;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .header-container { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo-area">
+                <img src="https://tmeleven.wordpress.com/wp-content/uploads/2026/05/6bf6f944-dd43-4cfd-bc61-19542f1e6270_-_copy-removebg-preview.png" alt="TM11 Logo" class="header-logo">
+                <span class="brand-name">TM11</span>
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">QandA</a></li>
+                    <li><a href="#contact-section">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Built To Last.<br>Designed To Impress.</h1>
+            <p>Premium Concreting, Landscaping & Fencing Experts in Melbourne.</p>
+            <a href="#contact-section" class="cta-btn">GET A FREE QUOTE</a>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT US -->
+    <section class="about-section">
+        <h2 class="section-title">About TM11</h2>
+        <div class="about-content">
+            <p>With over 10 years of experience proudly serving the Melbourne area, TM11 Concrete & Landscaping is committed to excellence. We provide high-quality services designed for strength, reliability, and visual impact. From massive concrete projects to detailed landscaping, our “Built to Last” guarantee ensures your property is in professional hands.</p>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SERVICES PREVIEW -->
+    <section class="services-preview">
+        <h2 class="section-title">Our Main Services</h2>
+        <div class="service-grid">
+            <!-- CONCRETING -->
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://tmeleven.wordpress.com/wp-content/uploads/2026/05/img_0873.jpeg');"></div>
+                <h3>Concreting</h3>
+            </div>
+            <!-- LANDSCAPING -->
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://tmeleven.wordpress.com/wp-content/uploads/2026/05/img_5089.jpeg');"></div>
+                <h3>Landscaping</h3>
+            </div>
+            <!-- FENCING -->
+            <div class="service-card">
+                <div class="service-img" style="background-image: url('https://tmeleven.wordpress.com/wp-content/uploads/2026/05/img_5091.jpeg');"></div>
+                <h3>Fencing</h3>
+            </div>
+        </div>
+        <a href="#" class="outline-btn">EXPLORE ALL SERVICES</a>
+    </section>
+
+    <!-- SECTION 4: CONTACT US -->
+    <section id="contact-section" class="contact-area">
+        <div class="contact-grid">
+            <div class="contact-box">
+                <h4>Contact Details</h4>
+                <p>📞 Phone: 0451 160 058</p>
+                <p>💬 WhatsApp: Message Us</p>
+                <p>✉️ Email: tmelevent11@gmail.com</p>
+                <p>📍 Address: Melbourne, VIC, Australia</p>
+            </div>
+            <div class="contact-box">
+                <h4>Social Presence</h4>
+                <div class="social-icons">
+                    <a href="#">Facebook</a>
+                    <a href="#">TikTok</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <p class="quote">“Precision in every slab, beauty in every garden, and strength in every fence.”</p>
+        <p class="copyright">© 2026 TM11 Concrete & Landscaping. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
