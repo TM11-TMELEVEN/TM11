@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TM11 | Concrete, Landscaping & Fencing Melbourne</title>
+    <!-- Font Awesome for Professional Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* CSS VARIABLES & RESET */
         :root {
@@ -12,6 +14,8 @@
             --dark: #121212;
             --black: #000000;
             --white: #ffffff;
+            --whatsapp: #25d366;
+            --call: #2ecc71;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,7 +28,7 @@
             scroll-behavior: smooth;
         }
 
-        /* SECTION 1: HEADER */
+        /* HEADER */
         .main-header {
             background: rgba(0, 0, 0, 0.95);
             padding: 10px 5%;
@@ -80,9 +84,9 @@
             color: var(--gold);
         }
 
-        /* HERO DESIGN - Based on your ad */
+        /* HERO SECTION */
         .hero {
-            min-height: 90vh;
+            min-height: 80vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://tmeleven.wordpress.com/wp-content/uploads/2026/05/img_5628.jpeg');
             background-size: cover;
             background-position: center;
@@ -126,137 +130,172 @@
             color: var(--gold);
         }
 
-        /* SECTION 2: ABOUT US */
-        .about-section {
+        /* SECTION STYLING */
+        .section-padding {
             padding: 100px 10%;
-            background: var(--dark);
             text-align: center;
         }
 
         .section-title {
             color: var(--gold);
             font-size: 2.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            color: var(--silver);
-        }
-
-        /* SECTION 3: SERVICES PREVIEW */
-        .services-preview {
-            padding: 80px 5%;
-            text-align: center;
-        }
-
+        /* SERVICES SECTION */
         .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin: 40px 0;
+            margin-bottom: 50px;
         }
 
         .service-card {
             background: #1a1a1a;
             border: 1px solid #333;
-            padding: 0 0 20px 0;
-            transition: 0.3s;
-            border-radius: 8px;
+            transition: 0.4s;
+            border-radius: 12px;
             overflow: hidden;
         }
 
         .service-card:hover {
             border-color: var(--gold);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
         }
 
         .service-img {
             height: 250px;
             background-size: cover;
             background-position: center;
+            border-bottom: 3px solid var(--gold);
         }
 
         .service-card h3 {
-            padding: 20px;
+            padding: 25px;
             color: var(--white);
+            text-transform: uppercase;
         }
 
-        .outline-btn {
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            padding: 10px 30px;
-            text-decoration: none;
-            font-weight: bold;
+        /* Q&A SECTION */
+        .qa-section {
+            background: var(--dark);
+        }
+
+        .qa-container {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .qa-item {
+            background: #1a1a1a;
+            margin-bottom: 20px;
+            padding: 25px;
+            border-left: 5px solid var(--gold);
             border-radius: 4px;
-            transition: 0.3s;
         }
 
-        .outline-btn:hover {
-            background: var(--gold);
-            color: var(--black);
+        .qa-item h4 {
+            color: var(--gold);
+            margin-bottom: 12px;
         }
 
-        /* SECTION 4: CONTACT US */
+        /* CONTACT SECTION */
         .contact-area {
-            padding: 100px 10%;
             background: #0a0a0a;
             border-top: 1px solid #222;
         }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            text-align: left;
         }
 
-        .contact-box h4 {
-            color: var(--gold);
-            margin-bottom: 15px;
-            font-size: 1.2rem;
+        .contact-info-text {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
         }
 
-        .contact-box p, .contact-box a {
-            color: var(--white);
-            text-decoration: none;
-            display: block;
+        .contact-info-text p {
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
+        .contact-btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-call { background: var(--call); color: white; }
+        .btn-whatsapp { background: var(--whatsapp); color: white; }
+        .btn-email { background: var(--gold); color: black; }
+        .btn-form { background: white; color: black; }
+
+        .contact-btn:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+
+        /* SOCIAL MEDIA HOVER */
         .social-icons {
             display: flex;
-            gap: 15px;
+            gap: 25px;
             margin-top: 20px;
         }
 
         .social-icons a {
-            font-size: 0.8rem;
-            border: 1px solid var(--gold);
-            padding: 5px 10px;
-            border-radius: 4px;
+            color: var(--white);
+            font-size: 2rem;
+            transition: 0.4s;
+        }
+
+        .social-icons a:hover {
             color: var(--gold);
+            transform: scale(1.2);
         }
 
         /* FOOTER */
         .main-footer {
-            padding: 40px 10%;
+            padding: 60px 10%;
             text-align: center;
             background: #000;
+            border-top: 1px solid #222;
         }
 
-        .quote {
-            font-style: italic;
-            color: var(--silver);
-            margin-bottom: 15px;
+        .footer-gold-text {
+            color: var(--gold);
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            text-transform: uppercase;
         }
 
-        /* MOBILE RESPONSIVE */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-content h1 { font-size: 2.5rem; }
             .header-container { flex-direction: column; gap: 15px; }
+            .contact-grid { text-align: center; }
+            .social-icons { justify-content: center; }
+            .contact-info-text p { justify-content: center; }
         }
     </style>
 </head>
@@ -272,79 +311,109 @@
             <nav class="nav-menu">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Our Services</a></li>
-                    <li><a href="#">QandA</a></li>
-                    <li><a href="#contact-section">Contact Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#qanda">QandA</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- SECTION 1: HERO -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
             <h1>Built To Last.<br>Designed To Impress.</h1>
             <p>Premium Concreting, Landscaping & Fencing Experts in Melbourne.</p>
-            <a href="#contact-section" class="cta-btn">GET A FREE QUOTE</a>
+            <a href="#contact" class="cta-btn">GET A FREE QUOTE</a>
         </div>
     </section>
 
-    <!-- SECTION 2: ABOUT US -->
-    <section class="about-section">
+    <!-- ABOUT SECTION -->
+    <section class="section-padding" style="background: var(--dark);">
         <h2 class="section-title">About TM11</h2>
-        <div class="about-content">
-            <p>With over 10 years of experience proudly serving the Melbourne area, TM11 Concrete & Landscaping is committed to excellence. We provide high-quality services designed for strength, reliability, and visual impact. From massive concrete projects to detailed landscaping, our “Built to Last” guarantee ensures your property is in professional hands.</p>
-        </div>
+        <p style="max-width: 850px; margin: 0 auto; font-size: 1.2rem; color: var(--silver);">
+            With over 10 years of experience serving the Melbourne area, TM11 Concrete & Landscaping delivers precision work built on a foundation of trust and quality.
+        </p>
     </section>
 
-    <!-- SECTION 3: SERVICES PREVIEW -->
-    <section class="services-preview">
+    <!-- SERVICES SECTION -->
+    <section id="services" class="section-padding">
         <h2 class="section-title">Our Main Services</h2>
         <div class="service-grid">
-            <!-- CONCRETING -->
             <div class="service-card">
                 <div class="service-img" style="background-image: url('https://tmeleven.wordpress.com/wp-content/uploads/2026/05/img_0873.jpeg');"></div>
                 <h3>Concreting</h3>
             </div>
-            <!-- LANDSCAPING -->
             <div class="service-card">
                 <div class="service-img" style="background-image: url('https://tmeleven.wordpress.com/wp-content/uploads/2026/05/img_5089.jpeg');"></div>
                 <h3>Landscaping</h3>
             </div>
-            <!-- FENCING -->
             <div class="service-card">
                 <div class="service-img" style="background-image: url('https://tmeleven.wordpress.com/wp-content/uploads/2026/05/img_5091.jpeg');"></div>
                 <h3>Fencing</h3>
             </div>
         </div>
-        <a href="#" class="outline-btn">EXPLORE ALL SERVICES</a>
+        <a href="#" class="cta-btn" style="background: transparent; color: var(--gold);">VIEW ALL SERVICES</a>
     </section>
 
-    <!-- SECTION 4: CONTACT US -->
-    <section id="contact-section" class="contact-area">
-        <div class="contact-grid">
-            <div class="contact-box">
-                <h4>Contact Details</h4>
-                <p>📞 Phone: 0451 160 058</p>
-                <p>💬 WhatsApp: Message Us</p>
-                <p>✉️ Email: tmelevent11@gmail.com</p>
-                <p>📍 Address: Melbourne, VIC, Australia</p>
+    <!-- Q&A SECTION -->
+    <section id="qanda" class="section-padding qa-section">
+        <h2 class="section-title">Questions & Answers</h2>
+        <div class="qa-container">
+            <div class="qa-item">
+                <h4>What areas do you cover?</h4>
+                <p>We serve all Melbourne metropolitan areas, specializing in high-quality residential and commercial concreting.</p>
             </div>
-            <div class="contact-box">
-                <h4>Social Presence</h4>
-                <div class="social-icons">
-                    <a href="#">Facebook</a>
-                    <a href="#">TikTok</a>
-                    <a href="#">Instagram</a>
+            <div class="qa-item">
+                <h4>Are your quotes free?</h4>
+                <p>Yes! We provide 100% free onsite consultations and quotes with no hidden fees.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-padding contact-area">
+        <div class="contact-grid">
+            <div>
+                <h4 style="color: var(--gold); margin-bottom: 20px; text-transform: uppercase;">Contact Details</h4>
+                
+                <!-- Plain Text Details -->
+                <div class="contact-info-text">
+                    <p><i class="fa-solid fa-phone" style="color: var(--call);"></i> <strong>Phone:</strong> 0451 160 058</p>
+                    <p><i class="fa-brands fa-whatsapp" style="color: var(--whatsapp);"></i> <strong>WhatsApp:</strong> 0451 160 058</p>
+                    <p><i class="fa-solid fa-envelope" style="color: var(--gold);"></i> <strong>Email:</strong> tmelevent11@gmail.com</p>
+                    <p><i class="fa-solid fa-location-dot" style="color: var(--silver);"></i> Melbourne, VIC, Australia</p>
                 </div>
+
+                <!-- Action Buttons -->
+                <div class="contact-btn-group">
+                    <a href="tel:0451160058" class="contact-btn btn-call"><i class="fa-solid fa-phone"></i> CALL NOW</a>
+                    <a href="https://wa.me/61451160058" target="_blank" class="contact-btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WHATSAPP US</a>
+                    <a href="mailto:tmelevent11@gmail.com" class="contact-btn btn-email"><i class="fa-solid fa-envelope"></i> SEND AN EMAIL</a>
+                    
+                    <!-- Google Quote Form Link -->
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScCaxNXCedZ1us0y-JfGT1ADKoIPqvvvawIvWKz24kfdsbaow/viewform?usp=header" target="_blank" class="contact-btn btn-form">
+                        <i class="fa-solid fa-file-signature"></i> FILL QUOTE FORM
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 style="color: var(--gold); margin-bottom: 20px; text-transform: uppercase;">Social Presence</h4>
+                <div class="social-icons">
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <p style="margin-top: 30px; color: var(--silver);">Follow our latest projects across Melbourne.</p>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="main-footer">
-        <p class="quote">“Precision in every slab, beauty in every garden, and strength in every fence.”</p>
-        <p class="copyright">© 2026 TM11 Concrete & Landscaping. All Rights Reserved.</p>
+        <p style="font-style: italic; color: var(--silver); margin-bottom: 15px;">“Built To Last. Designed To Impress.”</p>
+        <p class="footer-gold-text">© 2026 TM11 CONCRETE & LANDSCAPING. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
